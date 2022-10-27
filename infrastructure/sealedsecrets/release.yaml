@@ -4,7 +4,7 @@ metadata:
   name: sealed-secrets
   namespace: flux-system
 spec:
-  releaseName: sealed-secrets
+  releaseName: sealed-secrets-controller
   targetNamespace: kube-system
   chart:
     spec:
