@@ -1,0 +1,8 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: drawbridge-tls-cert
+spec:
+  commonName: store.staging.profian.com
+  dnsNames:
+  - store.staging.profian.com

@@ -1,0 +1,69 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: drawbridge-deployment
+  labels:
+    app: drawbridge
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: drawbridge
+  template:
+    metadata:
+      labels:
+        app: drawbridge
+    spec:
+      containers:
+      - name: drawbridge
+        # image is provided by kustomize
+        args:
+        - "--addr=0.0.0.0:8080"
+        - "--ca=/data/config/ca.crt"
+        - "--cert=/data/tls/tls.crt"
+        - "--key=/data/tls/tls.key"
+        - "--oidc-client=$(OIDC_CLIENT)"
+        - "--oidc-issuer=$(OIDC_ISSUER)"
+        - "--oidc-label=$(OIDC_LABEL)"
+        - "--store=/data/store"
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: tls-secret
+          mountPath: "/data/tls"
+          readOnly: true
+        - name: config-volume
+          mountPath: "/data/config"
+          readOnly: true
+        - name: store-volume
+          mountPath: "/data/store"
+        env:
+        - name: OIDC_CLIENT
+          valueFrom:
+            configMapKeyRef:
+              name: drawbridge-config
+              key: oidc_client
+        - name: OIDC_ISSUER
+          valueFrom:
+            configMapKeyRef:
+              name: drawbridge-config
+              key: oidc_issuer
+        - name: OIDC_LABEL
+          valueFrom:
+            configMapKeyRef:
+              name: drawbridge-config
+              key: oidc_label
+      volumes:
+      - name: tls-secret
+        secret:
+          secretName: drawbridge-tls-cert
+          optional: false
+      - name: config-volume
+        configMap:
+          name: drawbridge-config
+          items:
+          - key: ca.crt
+            path: ca.crt
+      - name: store-volume
+        # TODO: Replace with blob storage
+        emptyDir: {}
