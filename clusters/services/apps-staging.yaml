@@ -7,7 +7,6 @@ spec:
   interval: 10m0s
   dependsOn:
   - name: infrastructure
-  - name: storage
   sourceRef:
     kind: GitRepository
     name: k8s-config
