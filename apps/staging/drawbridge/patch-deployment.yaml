@@ -9,3 +9,5 @@ spec:
       containers:
       - name: drawbridge
         image: ghcr.io/profianinc/drawbridge:main
+        # main is a rolling branch, make sure to always re-pull
+        imagePullPolicy: Always
