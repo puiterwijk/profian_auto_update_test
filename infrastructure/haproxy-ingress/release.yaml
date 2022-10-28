@@ -18,6 +18,9 @@ spec:
   values:
     defaultBackend:
       enabled: true
+    rbac:
+      secret:
+        write: true
     controller:
       kind: DaemonSet
       nodeSelector:
