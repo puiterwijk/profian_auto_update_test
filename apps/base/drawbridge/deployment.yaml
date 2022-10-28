@@ -40,9 +40,9 @@ spec:
           mountPath: "/data/store"
         env:
         - name: RUST_LOG
-          value: info
+          value: "info"
         - name: RUST_LOG_JSON
-          value: true
+          value: "true"
         - name: OIDC_CLIENT
           valueFrom:
             configMapKeyRef:
