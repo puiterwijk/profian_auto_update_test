@@ -1,17 +1,16 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
 kind: Kustomization
 metadata:
-  name: apps-staging
+  name: storage-services
   namespace: flux-system
 spec:
   interval: 10m0s
   dependsOn:
   - name: infrastructure
-  - name: storage
   sourceRef:
     kind: GitRepository
     name: k8s-config
-  path: ./apps/staging
+  path: ./storage/services/
   force: true
   prune: true
   wait: true
