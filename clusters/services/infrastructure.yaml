@@ -10,6 +10,8 @@ spec:
     name: k8s-config
   path: ./infrastructure
   prune: true
+  wait: true
+  timeout: 5m0s
   patches:
   - target:
       kind: HelmRelease

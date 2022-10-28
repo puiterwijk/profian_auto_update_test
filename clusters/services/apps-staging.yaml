@@ -11,6 +11,7 @@ spec:
     kind: GitRepository
     name: k8s-config
   path: ./apps/staging
+  force: true
   prune: true
   wait: true
   timeout: 5m0s
