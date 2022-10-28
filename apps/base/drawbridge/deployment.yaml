@@ -39,6 +39,10 @@ spec:
         - name: store-volume
           mountPath: "/data/store"
         env:
+        - name: RUST_LOG
+          value: info
+        - name: RUST_LOG_JSON
+          value: true
         - name: OIDC_CLIENT
           valueFrom:
             configMapKeyRef:
