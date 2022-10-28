@@ -11,3 +11,7 @@ spec:
         image: ghcr.io/profianinc/drawbridge:main
         # main is a rolling branch, make sure to always re-pull
         imagePullPolicy: Always
+      volumes:
+      - name: store-volume
+        persistentVolumeClaim:
+          claimName: drawbridge-testing

@@ -66,5 +66,4 @@ spec:
           - key: ca.crt
             path: ca.crt
       - name: store-volume
-        # TODO: Replace with blob storage
-        emptyDir: {}
+        persistentVolumeClaim: {}
