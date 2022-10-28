@@ -12,10 +12,10 @@ spec:
   prune: true
   patches:
   - target:
-      kind: Service
-      namespace: ingress-controller
-      name: haproxy-ingress-ipv4
+      kind: HelmRelease
+      namespace: flux-system
+      name: haproxy-ingress
     patch: |
       - op: replace
-        path: /spec/loadBalancerIP
+        path: /spec/values/controller/service/loadBalancerIP
         value: 52.191.102.158
