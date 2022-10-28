@@ -8,3 +8,4 @@ namespace: drawbridge-staging
 patches:
 - patch-certificate.yaml
 - patch-deployment.yaml
+- patch-ingress.yaml
