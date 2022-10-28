@@ -4,4 +4,5 @@ resources:
 - sealed-secrets.yaml
 - haproxytech.yaml
 - jetstack.yaml
+- wave-k8s.yaml
 namespace: flux-system
