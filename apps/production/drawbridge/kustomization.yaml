@@ -6,7 +6,7 @@ resources:
 - pvc.yaml
 - ../../base/drawbridge
 namespace: drawbridge-production
-patches:
+patches: []
 - patch-certificate.yaml
 - patch-deployment.yaml
 - patch-ingress.yaml
