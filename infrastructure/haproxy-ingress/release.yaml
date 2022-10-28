@@ -30,6 +30,11 @@ spec:
         acme-emails: "infrastructure@profian.com"
         acme-endpoint: v2
         acme-terms-agreed: true
+        hsts: true
+        hsts-include-subdomains: true
+        hsts-max-age: 31536000
+        hsts-preload: true
+        https-log-format: default
       extraArgs:
         acme-server: ""
       ingressClassResource:
