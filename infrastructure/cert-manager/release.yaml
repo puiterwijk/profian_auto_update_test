@@ -18,6 +18,8 @@ spec:
     crds: Skip
   values:
     installCRDs: true
+    extraArgs:
+    - --enable-certificate-owner-ref
     global:
       leaderElection:
         namespace: cert-manager
