@@ -4,3 +4,4 @@ resources:
 - namespace.yaml
 - release.yaml
 - issuer-letsencrypt-staging.yaml
+- issuer-letsencrypt.yaml
