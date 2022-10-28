@@ -1,0 +1,11 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: drawbridge-tls-cert
+spec:
+  secretName: drawbridge-tls-cert
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-staging
+  usages:
+  - server auth
