@@ -31,9 +31,6 @@ spec:
           format: raw
           facility: daemon
       service:
-        enabled: true
-        type: LoadBalancer
-        externalTrafficPolicy: Local
-        loadBalancerIP: "0.0.0.0"
+        enabled: false
     defaultBackend:
       enabled: true
