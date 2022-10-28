@@ -3,4 +3,5 @@ kind: Kustomization
 resources:
 - sealed-secrets.yaml
 - haproxytech.yaml
+- jetstack.yaml
 namespace: flux-system
