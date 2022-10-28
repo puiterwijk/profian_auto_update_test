@@ -1,0 +1,13 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: drawbridge
+spec:
+  replicas: 2
+  template:
+    spec:
+      containers:
+      - name: drawbridge
+        image: ghcr.io/profianinc/drawbridge:main
+        # main is a rolling branch, make sure to always re-pull
+        imagePullPolicy: Always
