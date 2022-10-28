@@ -66,4 +66,5 @@ spec:
           - key: ca.crt
             path: ca.crt
       - name: store-volume
-        persistentVolumeClaim: {}
+        persistentVolumeClaim:
+          claimName: store
