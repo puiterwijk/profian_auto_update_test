@@ -17,7 +17,7 @@ spec:
       containers:
       - name: drawbridge
         # image is provided by kustomize
-        command: drawbridge
+        command: ["drawbridge"]
         args:
         - "--addr=0.0.0.0:8080"
         - "--ca=/data/config/ca.crt"
