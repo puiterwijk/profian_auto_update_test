@@ -31,7 +31,7 @@ spec:
         acme-endpoint: v2
         acme-terms-agreed: true
       extraArgs:
-      - --acme-server
+        acme-server: ""
       ingressClassResource:
         enabled: true
         default: true
