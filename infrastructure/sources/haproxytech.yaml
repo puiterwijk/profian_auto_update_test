@@ -3,5 +3,5 @@ kind: HelmRepository
 metadata:
   name: haproxytech
 spec:
-  interval: 30m
+  interval: 1h
   url: https://haproxytech.github.io/helm-charts
