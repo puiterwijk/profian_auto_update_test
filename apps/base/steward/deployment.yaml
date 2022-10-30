@@ -39,9 +39,8 @@ spec:
             scheme: HTTP
             path: /
             port: 8080
-          periodSeconds: 1
+          periodSeconds: 5
           timeoutSeconds: 3
-          successThreshold: 3
       volumes:
       - name: signingkey
         secret:
