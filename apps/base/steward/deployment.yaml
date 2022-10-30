@@ -17,7 +17,7 @@ spec:
       containers:
       - name: steward
         # image is provided by kustomize
-        command: ["steard"]
+        command: ["steward"]
         args:
         - "--addr=0.0.0.0"
         - "--port=8080"
