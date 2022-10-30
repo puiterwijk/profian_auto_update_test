@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: steward
+  labels:
+    apps: steward
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      apps: steward
+  template:
+    metadata:
+      labels:
+        apps: steward
+    spec:
+      containers:
+      - name: steward
+        # image is provided by kustomize
+        command: ["steard"]
+        args:
+        - "--addr=0.0.0.0"
+        - "--port=8080"
+        - "--crt=/data/signkey/tls.crt"
+        - "--key=/data/signkey/tls.key"
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: signingkey
+          mountPath: "/data/signkey"
+          readOnly: true
+        env:
+        - name: RUST_LOG
+          value: "info"
+        - name: RUST_LOG_JSON
+          value: "true"
+      volumes:
+      - name: signingkey
+        secret:
+          secretName: signingkey
+          optional: false
