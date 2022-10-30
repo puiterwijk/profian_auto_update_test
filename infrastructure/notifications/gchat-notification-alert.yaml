@@ -1,0 +1,20 @@
+apiVersion: notification.toolkit.fluxcd.io/v1beta1
+kind: Alert
+metadata:
+  name: gchat-notifications
+  namespace: flux-system
+spec:
+  providerRef: 
+    name: gchat
+  eventSeverity: error
+  eventSources:
+  - kind: Kustomization
+    namespace: flux-system
+    name: '*'
+  - kind: GitRepository
+    namespace: flux-system
+    name: '*'
+  - kind: HelmRelease
+    namespace: flux-system
+    name: '*'
+  suspend: false

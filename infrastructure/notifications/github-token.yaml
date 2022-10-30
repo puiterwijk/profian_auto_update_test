@@ -1,0 +1,13 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  name: github-token
+  namespace: flux-system
+spec:
+  encryptedData:
+    token: AgB81onXUHQiKDxMys1L3RhyWZEXD/RNEbI5Yj/QAu1BspkO/F8DciKD2tzXrjOE68gUhCVfv2jDCM8k2oVn7vtkIq5ac70rgjpsju0cZfk/Yl89BusLWGU26ZPzCRMZG4WHTvhFDFnjmXixUSmofGtQtfeiDjZxp4e7r0uFRIoBxwQPjvIROZzcTA/UQA7U+JwV7SB2qR4ARnEiXRliYZOPiGocUJU9uiCZIzmtboiLy7YcThv5xjreM2WOfirVRALB0YgwV5TkathkKxMUMmTpZihHVv5ngfu4ORvKbguGQMnG1lRG2YYWrdc6PUDaeEd/AWd/oCB4OztlzFhRdSaskbvIcqdwksaUcSqkVGta0HYkybf1DvQXZEd51nBDjPmrsA5qXnICuWTOncgwDRCd4s8AZtmCw8RiddZjD+By9XKhVIH1u8W+xrpwzfJnUcSs4JRDwmXNE+56dnSKCt50LgSYHLg3es25FG/fKqMlp/lLlaU9aeducMb98xj2jN/lk2S/FkHpTaoNUC4xuakQJTN20x8HcavrKqZIHbqnC6y8HBlK8R7cvJdRjiJ69Nse+zAalO6WF/N63ZNbAiyOmvMn4WH83rhGaakF15KPoCZ8bT1pWWW4I7VQhdvKcYlglOjAzaK3KzQZEG0dHDLS9D/JIkLHIrwTSJsrW00HkDeQdNo2XJU5QtUbGciuPBjU2+dHSsFE1sFIQ4H/tadzrJWzSQawZn+pOFF38MQvMa2EsYhWzQoe
+  template:
+    metadata:
+      name: github-token
+      namespace: flux-system
+
