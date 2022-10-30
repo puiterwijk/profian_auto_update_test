@@ -9,3 +9,5 @@ spec:
     name: letsencrypt
   usages:
   - server auth
+  privateKey:
+    rotationPolicy: Always
