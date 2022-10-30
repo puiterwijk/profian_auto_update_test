@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - signingkey.yaml
-- networkpolicy.yaml
 - ../../base/steward
 namespace: steward-staging
 patches:
