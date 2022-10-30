@@ -3,6 +3,10 @@ kind: Ingress
 metadata:
   name: steward
 spec:
+  tls:
+  - hosts:
+    - attest.staging.profian.com
+    secretName: steward-tls-cert
   rules:
   - host: attest.staging.profian.com
     http:
