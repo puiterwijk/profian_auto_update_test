@@ -58,6 +58,13 @@ spec:
             configMapKeyRef:
               name: drawbridge-config
               key: oidc_label
+        readinessProbe:
+          httpGet:
+            scheme: HTTPS
+            path: /
+            port: 8080
+          periodSeconds: 1
+          successThreshold: 3
       volumes:
       - name: tls-secret
         secret:

@@ -34,6 +34,13 @@ spec:
           value: "info"
         - name: RUST_LOG_JSON
           value: "true"
+        readinessProbe:
+          httpGet:
+            scheme: HTTP
+            path: /
+            port: 8080
+          periodSeconds: 1
+          successThreshold: 3
       volumes:
       - name: signingkey
         secret:
