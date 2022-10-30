@@ -61,7 +61,7 @@ spec:
         readinessProbe:
           httpGet:
             scheme: HTTPS
-            path: /
+            path: /health
             port: 8080
           periodSeconds: 1
           successThreshold: 3
