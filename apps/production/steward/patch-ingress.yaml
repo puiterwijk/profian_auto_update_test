@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: steward
+spec:
+  tls:
+  - hosts:
+    - attest.profian.com
+    secretName: steward-tls-cert
+  rules:
+  - host: attest.profian.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: steward
+            port:
+              number: 8080
