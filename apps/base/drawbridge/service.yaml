@@ -4,7 +4,7 @@ metadata:
   name: drawbridge
 spec:
   selector:
-    app.kubernetes.io/name: MyApp
+    app.kubernetes.io/name: drawbridge
   ports:
   - protocol: TCP
     port: 8080
