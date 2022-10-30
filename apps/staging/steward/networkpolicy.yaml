@@ -1,0 +1,32 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: default-deny
+spec:
+  podSelector: {}
+  policyTypes:
+  - Ingress
+  - Egress
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: from-ingress
+spec:
+  podSelector:
+    matchLabels:
+      app: steward
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: ingress-controller
+      podSelector:
+        matchLabels:
+          app.kubernetes.io/name: kubernetes-ingress
+    ports:
+    - protocol: TCP
+      port: 8080
