@@ -4,14 +4,14 @@ metadata:
   name: infrastructure
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 1m
   sourceRef:
     kind: GitRepository
     name: k8s-config
   path: ./infrastructure
   prune: true
   wait: true
-  timeout: 5m0s
+  timeout: 1m
   patches:
   - target:
       kind: HelmRelease

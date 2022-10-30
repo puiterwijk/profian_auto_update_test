@@ -4,7 +4,7 @@ metadata:
   name: storage
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 1m
   dependsOn:
   - name: infrastructure
   sourceRef:
@@ -14,4 +14,4 @@ spec:
   force: true
   prune: true
   wait: true
-  timeout: 5m0s
+  timeout: 1m
