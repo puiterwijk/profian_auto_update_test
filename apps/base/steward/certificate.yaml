@@ -6,6 +6,6 @@ spec:
   secretName: steward-tls-cert
   issuerRef:
     kind: ClusterIssuer
-    name: letsencrypt-staging
+    name: letsencrypt
   usages:
   - server auth
