@@ -20,6 +20,11 @@ spec:
       appKeyExistingSecret: keys
       site: datadoghq.com
       logLevel: ERROR
+      podLabelsAsTags:
+        env: env
+        service: app
+      namespaceLabelsAsTags:
+        env: env
       logs:
         enabled: true
         containerCollectAll: true
