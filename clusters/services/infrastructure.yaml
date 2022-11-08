@@ -11,7 +11,7 @@ spec:
   path: ./infrastructure
   prune: true
   wait: true
-  timeout: 1m
+  timeout: 10m
   patches:
   - target:
       kind: HelmRelease
