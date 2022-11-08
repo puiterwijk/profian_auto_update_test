@@ -25,6 +25,7 @@ spec:
         service: app
       namespaceLabelsAsTags:
         env: env
+      containerExclude: "name:coredns name:addon-token-adapter name:azure-ip-masq-agent"
       logs:
         enabled: true
         containerCollectAll: true
