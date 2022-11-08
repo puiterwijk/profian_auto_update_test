@@ -6,3 +6,4 @@ resources:
 - sealedsecrets
 - haproxy-ingress
 - cert-manager
+- datadog

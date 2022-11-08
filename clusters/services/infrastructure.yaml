@@ -21,3 +21,11 @@ spec:
       - op: replace
         path: /spec/values/controller/service/loadBalancerIP
         value: 52.191.102.158
+  - target:
+      kind: HelmRelease
+      namespace: flux-system
+      name: datadog
+    patch: |
+      - op: replace
+        path: /spec/values/datadog/clusterName
+        value: services

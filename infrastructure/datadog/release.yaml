@@ -1,0 +1,32 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: datadog
+  namespace: flux-system
+spec:
+  releaseName: datadog-controller
+  targetNamespace: datadog
+  chart:
+    spec:
+      chart: datadog
+      sourceRef:
+        kind: HelmRepository
+        name: datadog
+        namespace: flux-system
+  interval: 1h0m0s
+  values:
+    datadog:
+      apiKeyExistingSecret: keys
+      appKeyExistingSecret: keys
+      site: datadoghq.com
+      logs:
+        enabled: true
+        containerCollectAll: true
+      kubelet:
+        host:
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        hostCAPath: /etc/kubernetes/certs/kubeletserver.crt
+        # https://docs.datadoghq.com/containers/kubernetes/distributions/?tab=helm#AKS
+        tlsVerify: false
