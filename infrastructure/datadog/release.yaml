@@ -37,3 +37,7 @@ spec:
         hostCAPath: /etc/kubernetes/certs/kubeletserver.crt
         # https://docs.datadoghq.com/containers/kubernetes/distributions/?tab=helm#AKS
         tlsVerify: false
+    agents:
+      containers:
+        agent:
+          logLevel: CRITICAL
