@@ -23,8 +23,6 @@ spec:
         default: true
       nodeSelector:
         "kubernetes.azure.com/mode": system
-      podAnnotations:
-        datadog_source_override: haproxy
       config: {}
       logging:
         level: info
