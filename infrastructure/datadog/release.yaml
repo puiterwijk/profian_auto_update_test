@@ -23,7 +23,8 @@ spec:
       podLabelsAsTags:
         env: env
         service: app
-        source: datadog_source_override
+      podAnnotationsAsTags:
+        datadog_source_override: source
       namespaceLabelsAsTags:
         env: env
       containerExclude: "name:coredns name:addon-token-adapter name:azure-ip-masq-agent name:konnectivity-agent image:mcr.microsoft.com/oss/fluxcd/notification-controller"
