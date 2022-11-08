@@ -25,7 +25,7 @@ spec:
         service: app
       namespaceLabelsAsTags:
         env: env
-      containerExclude: "name:coredns name:addon-token-adapter name:azure-ip-masq-agent image:mcr.microsoft.com/oss/fluxcd/notification-controller"
+      containerExclude: "name:coredns name:addon-token-adapter name:azure-ip-masq-agent name:konnectivity-agent image:mcr.microsoft.com/oss/fluxcd/notification-controller"
       logs:
         enabled: true
         containerCollectAll: true
@@ -37,7 +37,3 @@ spec:
         hostCAPath: /etc/kubernetes/certs/kubeletserver.crt
         # https://docs.datadoghq.com/containers/kubernetes/distributions/?tab=helm#AKS
         tlsVerify: false
-    agents:
-      containers:
-        agent:
-          logLevel: CRITICAL
