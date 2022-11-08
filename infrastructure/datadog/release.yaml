@@ -19,6 +19,7 @@ spec:
       apiKeyExistingSecret: keys
       appKeyExistingSecret: keys
       site: datadoghq.com
+      logLevel: ERROR
       logs:
         enabled: true
         containerCollectAll: true
