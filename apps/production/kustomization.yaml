@@ -3,5 +3,5 @@ kind: Kustomization
 commonLabels:
   env: production
 resources:
-#- drawbridge
+- drawbridge
 - steward
