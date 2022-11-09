@@ -22,7 +22,7 @@ spec:
       logLevel: ERROR
       env:
       - name: DD_LOGS_CONFIG_PROCESSING_RULES
-        value: '[{"type": "exclude_at_match", "name": "healthcheck", "pattern": "\"user-agent\": \"kube-probe/"}]'
+        value: '[{"type": "exclude_at_match", "name": "healthcheck", "pattern": "\"kube-probe/"}]'
       podLabelsAsTags:
         env: env
         service: app
