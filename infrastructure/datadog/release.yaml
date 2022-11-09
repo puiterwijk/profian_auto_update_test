@@ -28,7 +28,7 @@ spec:
         service: app
       namespaceLabelsAsTags:
         env: env
-      containerExclude: "name:fluxconfig-controller name:coredns name:addon-token-adapter name:azure-npm name:azure-ip-masq-agent name:konnectivity-agent image:mcr.microsoft.com/oss/fluxcd/notification-controller image:mcr.microsoft.com/oss/fluxcd/kustomize-controller image:mcr.microsoft.com/oss/fluxcd/source-controller"
+      containerExclude: "name:fluxconfig-agent name:coredns name:addon-token-adapter name:azure-npm name:azure-ip-masq-agent name:konnectivity-agent image:mcr.microsoft.com/oss/fluxcd/notification-controller image:mcr.microsoft.com/oss/fluxcd/kustomize-controller image:mcr.microsoft.com/oss/fluxcd/source-controller image:mcr.microsoft.com/azurearck8s/aks/stable/config-agent image:mcr.microsoft.com/azurek8sflux/fluxconfig-controller"
       logs:
         enabled: true
         containerCollectAll: true
