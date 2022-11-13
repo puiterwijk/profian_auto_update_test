@@ -3,9 +3,8 @@ kind: ConfigMap
 metadata:
   name: drawbridge-config
 data:
-  oidc_client: "2vq9XnQgcGZ9JCxsGERuGURYIld3mcIh"
   oidc_issuer: "https://auth.profian.com"
-  oidc_label: "auth.profian.com"
+  oidc_audience: "https://store.profian.com/"
   ca.crt: |-
     -----BEGIN CERTIFICATE-----
     MIICDTCCAbSgAwIBAgIUUUCEMASLhuY0UXIt8KJaWD0+/NAwCgYIKoZIzj0EAwIw

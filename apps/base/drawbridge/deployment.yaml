@@ -23,9 +23,8 @@ spec:
         - "--ca=/data/config/ca.crt"
         - "--cert=/data/tls/tls.crt"
         - "--key=/data/tls/tls.key"
-        - "--oidc-client=$(OIDC_CLIENT)"
         - "--oidc-issuer=$(OIDC_ISSUER)"
-        - "--oidc-label=$(OIDC_LABEL)"
+        - "--oidc-audience=$(OIDC_AUDIENCE)"
         - "--store=/data/store"
         ports:
         - containerPort: 8080
@@ -53,11 +52,11 @@ spec:
             configMapKeyRef:
               name: drawbridge-config
               key: oidc_issuer
-        - name: OIDC_LABEL
+        - name: OIDC_AUDIENCE
           valueFrom:
             configMapKeyRef:
               name: drawbridge-config
-              key: oidc_label
+              key: oidc_audience
         readinessProbe:
           httpGet:
             scheme: HTTPS
