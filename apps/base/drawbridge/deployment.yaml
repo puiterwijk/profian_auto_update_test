@@ -42,11 +42,6 @@ spec:
           value: "info"
         - name: RUST_LOG_JSON
           value: "true"
-        - name: OIDC_CLIENT
-          valueFrom:
-            configMapKeyRef:
-              name: drawbridge-config
-              key: oidc_client
         - name: OIDC_ISSUER
           valueFrom:
             configMapKeyRef:
