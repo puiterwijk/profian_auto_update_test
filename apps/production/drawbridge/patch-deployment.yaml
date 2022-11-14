@@ -9,7 +9,7 @@ spec:
       containers:
       - name: drawbridge
         # Temporarily deploy an old release to prior to the OIDC fix
-        image: ghcr.io/profianinc/drawbridge:67d28c4c731fb4de679893f0c2df6b1d0debccf8ee42c96b943a07fd41bae1d1
+        image: ghcr.io/profianinc/drawbridge@sha256:67d28c4c731fb4de679893f0c2df6b1d0debccf8ee42c96b943a07fd41bae1d1
         imagePullPolicy: Always
         args:
         - "--addr=0.0.0.0:8080"
