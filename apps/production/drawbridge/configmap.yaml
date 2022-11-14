@@ -5,6 +5,7 @@ metadata:
 data:
   oidc_issuer: "https://auth.profian.com"
   oidc_audience: "https://store.profian.com/"
+  oidc_client: "2vq9XnQgcGZ9JCxsGERuGURYIld3mcIh"
   ca.crt: |-
     -----BEGIN CERTIFICATE-----
     MIICDTCCAbSgAwIBAgIUUUCEMASLhuY0UXIt8KJaWD0+/NAwCgYIKoZIzj0EAwIw

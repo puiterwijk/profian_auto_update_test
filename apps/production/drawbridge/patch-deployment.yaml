@@ -8,6 +8,21 @@ spec:
     spec:
       containers:
       - name: drawbridge
-        image: ghcr.io/profianinc/drawbridge:main
-        # main is a rolling branch, make sure to always re-pull
+        # Temporarily deploy an old release to prior to the OIDC fix
+        image: ghcr.io/profianinc/drawbridge:67d28c4c731fb4de679893f0c2df6b1d0debccf8ee42c96b943a07fd41bae1d1
         imagePullPolicy: Always
+        args:
+        - "--addr=0.0.0.0:8080"
+        - "--ca=/data/config/ca.crt"
+        - "--cert=/data/tls/tls.crt"
+        - "--key=/data/tls/tls.key"
+        - "--oidc-issuer=$(OIDC_ISSUER)"
+        - "--oidc-client=$(OIDC_CLIENT)"
+        - "--oidc-label=auth.profian.com"
+        - "--store=/data/store"
+        env:
+        - name: OIDC_CLIENT
+          valueFrom:
+            configMapKeyRef:
+              name: drawbridge-config
+              key: oidc_client
