@@ -5,4 +5,5 @@ resources:
 - sealed-secrets.yaml
 - haproxytech.yaml
 - jetstack.yaml
+- galleybytes.yaml
 namespace: flux-system
