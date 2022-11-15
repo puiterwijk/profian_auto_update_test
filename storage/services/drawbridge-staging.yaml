@@ -19,6 +19,6 @@ spec:
     volumeAttributes:
       containerName: drawbridge-staging
     nodeStageSecretRef:
-      name: azure-storage-account-profianservices
+      name: azure-storage-account-profianservicesstaging
       namespace: default
 
