@@ -7,4 +7,3 @@ resources:
 - haproxy-ingress
 - cert-manager
 - datadog
-- terraform
