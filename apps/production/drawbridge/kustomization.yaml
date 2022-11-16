@@ -4,6 +4,7 @@ resources:
 - namespace.yaml
 - configmap.yaml
 - pvc.yaml
+- pdb.yaml
 - ../../base/drawbridge
 namespace: drawbridge-production
 patches:

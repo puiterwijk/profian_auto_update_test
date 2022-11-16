@@ -1,0 +1,9 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+   name: drawbridge-pdb
+spec:
+   minAvailable: 60%
+   selector:
+    matchLabels:
+      app: drawbridge

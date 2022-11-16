@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
 - namespace.yaml
 - signingkey.yaml
+- pdb.yaml
 - ../../base/steward
 namespace: steward-production
 patches:
