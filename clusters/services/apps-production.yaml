@@ -14,4 +14,4 @@ spec:
   force: true
   prune: true
   wait: true
-  timeout: 1m
+  timeout: 10m
