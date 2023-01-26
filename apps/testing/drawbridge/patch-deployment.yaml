@@ -7,5 +7,5 @@ spec:
   template:
     spec:
       containers:
-      - image: ghcr.io/profianinc/drawbridge:0.2.0-rc2
+      - image: ghcr.io/profianinc/drawbridge:0.2.0
         name: drawbridge
