@@ -1,0 +1,45 @@
+name: 'Update service versions'
+on:
+  workflow_dispatch:
+    inputs:
+      component:
+        description: 'Component that needs to get updated'
+        required: true
+        type: choice
+        options:
+        - drawbridge
+        - steward
+        - enarx
+      git_ref:
+        description: 'Git ref pushed to'
+        required: true
+      image_digest:
+        description: 'Docker image digest pushed'
+        required: true
+concurrency:
+  group: update-${{ github.workflow }}-${{ github.event.inputs.component }}
+  cancel-in-progress: true
+jobs:
+  auto_update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    environment: auto-updater
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        cache: 'pip'
+        cache-dependency-path: |
+          .github/scripts/requirements.txt
+    - run: pip install -r .github/scripts/requirements.txt
+    - name: Run script
+      env:
+        UPDATER_APP_ID: ${{ secrets.UPDATER_APP_ID }}
+        UPDATER_APP_PRIVATE_KEY: ${{ secrets.UPDATER_APP_PRIVATE_KEY }}
+        UPDATER_APP_INSTALL_ID: ${{ secrets.UPDATER_APP_INSTALL_ID }}
+      run: |
+        python .github/scripts/update.py \
+          ${{ github.event.inputs.component }} \
+          ${{ github.event.inputs.git_ref }} \
+          ${{ github.event.inputs.image_digest }}
