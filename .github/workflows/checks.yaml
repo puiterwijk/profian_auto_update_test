@@ -4,6 +4,8 @@ on:
 jobs:
   kustomize-cluster-services:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     strategy:
       matrix:
         cluster:
