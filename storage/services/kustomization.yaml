@@ -3,5 +3,6 @@ kind: Kustomization
 resources:
 - storageaccount.yaml
 - storageaccount-staging.yaml
+- drawbridge-testing.yaml
 - drawbridge-staging.yaml
 - drawbridge-production.yaml
