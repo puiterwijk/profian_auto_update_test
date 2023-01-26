@@ -1,0 +1,29 @@
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  name: signingkey
+  namespace: steward-staging
+spec:
+  encryptedData:
+    tls.key: AgB2C0eBJPOmWBoDq5ywBIpi0i3ZGc2czc65lpHQjDTMMSNj5TTSd9qX5Bvt5jbOKrW1YbMjRB+Wbxy5+Zsf1F3ghrRiy/RYr4yD5NxjpinUwuUelYTgjPJF/aFvYbI/HPbe9/ZGEfpufhYfJ4lD0o/sS+i13dTmP7Yue2ph41M9emBTqDg7M0bJ1smEPCCCWGGxxvYHXWc1R0Rv/wtLndF1riVYGTPHFB+w+n+44GoO/MkcRRDiauEXk1NEUe+AZNf0ez7XKT07u7RMaoVS5XjP7xU7PHNIg4LbMzQlPzfh+v+X6Uaa4v2l7QzOajuE91Ten0Pwecak14g0ASSHGycDrPDwQspvPW2zOBVgE9aAVEeBcUTH6oVzWGPoeAuehLQszhr3jKjpUPCuI2r2hCoGRMePOveNnrKx4RjvjcLacPAka6KHFMztg/dtXqopfI/fBOjXDGUOOJ0kbOLhhx2kuwy0bd6FjXz/2OhUv08XKBuY8l+t81Zr4ywJaaixuHTxtjFQaehZm4M5vKs/Q49NWce4rm44xpF+6MmzU/0l0Ua+Lf93R7UnZq6yxW8mM5V2WXMdSGB3vtczmK+OQ78zYS/GYOutTBzcI1mWcuaIf2hg/Kohap0SHkz2Gesl2V92skWMC4d1GbzYti1Weq8Y6vG4fLSQt5a6K05QJ8t5TvNaAOf0xPyUjv9nJwBBCAxL+jopsdJjGOp55fiHtXkJXHSiqh2s7lEb0DfTjg7wmlP/irDaWn9hCSL2+0qczf2YOg6TDDThshL+QD3G/DDHmzjjMy+t613KqlmqyMnFHAFo9yz0VKXF/nXatbsHBhq6in/md6mOfKd1WUsNPGhEtTlmh7C2BDa6roT8smWUZnyRJkEfN7lGRYKDQnNJ6dS8C43b4Xb050QsxMj8bFMtHgP1NvlXiSy/YQVFRMFjgFaewbKYh2g+Wk0vCH+iW7eoxodqNMOhrdv8akiDd0TuWpBG7RYtgkVDzno0r1ca3B+x1SnENjGBQU6cTCGk5jnP
+  template:
+    metadata:
+      name: signingkey
+      namespace: steward-staging
+    type: kubernetes.io/tls
+    data:
+      tls.crt: |-
+        -----BEGIN CERTIFICATE-----
+        MIICITCCAcigAwIBAgIUVfDWNxamrYhWU0rix6R2chGYxtowCgYIKoZIzj0EAwIw
+        UzELMAkGA1UEBhMCVVMxFzAVBgNVBAgMDk5vcnRoIENhcm9saW5hMRAwDgYDVQQH
+        DAdSYWxlaWdoMRkwFwYDVQQDDBBQcm9vZiBvZiBDb25jZXB0MB4XDTIyMDcxOTE2
+        NTM1OFoXDTIzMDcxOTE2NTM1OFowUzELMAkGA1UEBhMCVVMxFzAVBgNVBAgMDk5v
+        cnRoIENhcm9saW5hMRAwDgYDVQQHDAdSYWxlaWdoMRkwFwYDVQQDDBBQcm9vZiBv
+        ZiBDb25jZXB0MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEXIcI3D0nC/kap4f7
+        HSM90mVgxGsMGv1SJodK7KW4WeTkQSXhctAnNLKGIFR6Hfy5XlgSCzsArKuElu/m
+        +gn4xaN6MHgwDwYDVR0TAQH/BAUwAwEB/zALBgNVHQ8EBAMCAQYwOQYJYIZIAYb4
+        QgENBCwWKlByb2ZpYW4gYXR0ZXN0YXRpb24gc2VydmljZSBDQSBjZXJ0aWZpY2F0
+        ZTAdBgNVHQ4EFgQU5XBrR5IoyN4h+3Sunmar36q3DSswCgYIKoZIzj0EAwIDRwAw
+        RAIgF9S1k564Oafa24CBpl9MkpEhyGk7Y7C3StAsb59sP/cCIGalF9fyJn5nCVL0
+        7btDhmLSBjT7H66MxLRmKorh6MOs
+        -----END CERTIFICATE-----
