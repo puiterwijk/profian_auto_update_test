@@ -7,5 +7,5 @@ spec:
   template:
     spec:
       containers:
-      - name: steward
-        image: ghcr.io/profianinc/steward:0.2.0
+      - image: ghcr.io/profianinc/steward:0.3.0
+        name: steward
